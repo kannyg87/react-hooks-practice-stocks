@@ -3,16 +3,16 @@ import StockContainer from "./StockContainer";
 import PortfolioContainer from "./PortfolioContainer";
 import SearchBar from "./SearchBar";
 
-function MainContainer() {
+function MainContainer({ stock, handleAdd, portfolio, handleDelete,  isChecked, handleCheckboxChange, filterTypeStock }) {
   return (
     <div>
-      <SearchBar />
+      <SearchBar handleCheckboxChange={handleCheckboxChange} isChecked={isChecked} filterTypeStock={filterTypeStock} />
       <div className="row">
         <div className="col-8">
-          <StockContainer />
+          <StockContainer stock={stock} handleAdd={handleAdd} />
         </div>
         <div className="col-4">
-          <PortfolioContainer />
+          <PortfolioContainer portfolio={portfolio} handleDelete={handleDelete } />
         </div>
       </div>
     </div>
